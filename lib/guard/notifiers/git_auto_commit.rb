@@ -1,3 +1,5 @@
+require 'guard/notifier'
+
 module Guard
   module Notifier
     module GitAutoCommit
@@ -36,4 +38,8 @@ module Guard
       end
     end
   end
+end
+
+if defined?(Guard::Notifier::NOTIFIERS)
+  Guard::Notifier::NOTIFIERS[:git_auto_commit] = Guard::Notifier::GitAutoCommit
 end

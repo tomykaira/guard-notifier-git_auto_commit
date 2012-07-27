@@ -8,6 +8,9 @@ Gem::Specification.new do |gem|
   gem.summary       = %q{GitAutoCommit receives guard's notification and commit with build status}
   gem.homepage      = ""
 
+  gem.add_dependency('guard', '~>1.2.3')
+  gem.add_development_dependency('rake')
+
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
