@@ -29,8 +29,8 @@ module Guard
       def notify(type, title, message, image, options = { })
         commit_message = [type, title, message].join('  ').gsub(/\r|\n/, '')
         commit_message << "\n\n"
-        commit_message << `git diff --cached`
         system("git add -u")
+        commit_message << `git diff --cached`
         File.popen("git commit -F -", "r+") do |fd|
           fd.write commit_message
           fd.close
