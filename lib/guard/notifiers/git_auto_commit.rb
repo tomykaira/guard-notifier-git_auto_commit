@@ -3,7 +3,7 @@ require 'guard/notifier'
 module Guard
   module Notifier
     module GitAutoCommit
-      VERSION = "0.1.0"
+      VERSION = "0.1.1"
 
       extend self
 
