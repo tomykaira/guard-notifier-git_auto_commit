@@ -35,6 +35,13 @@ module Guard
           fd.write commit_message
           fd.close
         end
+
+        # notify untracked files
+        untracked_files = `git ls-files --exclude-standard --others`.split("\n")
+        unless untracked_files.select { |path|
+            ! File.basename(path).match(/^\.|~$/) }.empty?
+          warn "\e[35mYou have untracked file\e[0m"
+        end
       end
     end
   end
