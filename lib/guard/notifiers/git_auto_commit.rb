@@ -3,7 +3,6 @@ require 'guard/notifier'
 module Guard
   module Notifier
     module GitAutoCommit
-      VERSION = "0.1.1"
 
       extend self
 
@@ -47,6 +46,6 @@ module Guard
   end
 end
 
-if defined?(Guard::Notifier::NOTIFIERS)
-  Guard::Notifier::NOTIFIERS[:git_auto_commit] = Guard::Notifier::GitAutoCommit
+if defined?(::Guard::Notifier::NOTIFIERS)
+  ::Guard::Notifier::NOTIFIERS << [[:git_auto_commit, ::Guard::Notifier::GitAutoCommit]]
 end

@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-require File.expand_path('../lib/guard/notifiers/git_auto_commit', __FILE__)
+require File.expand_path('../lib/version', __FILE__)
 
 Gem::Specification.new do |gem|
   gem.authors       = ["tomykaira"]
@@ -8,7 +8,7 @@ Gem::Specification.new do |gem|
   gem.summary       = %q{GitAutoCommit receives guard's notification and commit with build status}
   gem.homepage      = ""
 
-  gem.add_dependency('guard', '~>1.2.3')
+  gem.add_dependency('guard', '~>1.6.2')
   gem.add_development_dependency('rake')
 
   gem.files         = `git ls-files`.split($\)
